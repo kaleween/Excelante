@@ -23,7 +23,7 @@ import (
 func ReadExcelFileByLine(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	file, _, _ := r.FormFile("file")
-	r.ParseMultipartForm(60 << 20)
+	r.ParseMultipartForm(500 << 20)
 	options := r.Form.Get("options")
 
 	readerOptions := models.ReaderOption{}
@@ -56,7 +56,7 @@ func ReadExcelFileByLine(w http.ResponseWriter, r *http.Request) {
 func ReadExcelFileByColumn(w http.ResponseWriter, r *http.Request) {
 	w.Header().Set("Content-Type", "application/json")
 	file, _, _ := r.FormFile("file")
-	r.ParseMultipartForm(60 << 20)
+	r.ParseMultipartForm(500 << 20)
 	options := r.Form.Get("options")
 
 	readerOptions := models.ReaderOption{}
